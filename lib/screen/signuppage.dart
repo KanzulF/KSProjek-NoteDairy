@@ -3,17 +3,19 @@ import 'package:projek/widget/inputtext.dart';
 import 'package:projek/screen/loginpage.dart';
 
 class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF308E78),
+        backgroundColor: const Color(0xFF308E78),
         centerTitle: true,
-        title: Text('Note Dairy SignUp'),
+        title: const Text('Note Dairy SignUp'),
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(right: 64, left: 64),
+          padding: const EdgeInsets.only(right: 64, left: 64),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -28,16 +30,19 @@ class SignupPage extends StatelessWidget {
                   InputText(
                     hint: 'Email',
                     obscure: false,
+                    line: 1,
                   ),
                   SizedBox(height: 16.0),
                   InputText(
                     hint: "Password",
                     obscure: true,
+                    line: 1,
                   ),
                   SizedBox(height: 16.0),
                   InputText(
                     hint: "Confirmation Password",
                     obscure: true,
+                    line: 1,
                   )
                 ],
               ),
@@ -57,21 +62,21 @@ class SignupPage extends StatelessWidget {
                           10.0), // Atur border radius tombol
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Sign Up',
                     style: TextStyle(fontSize: 18),
                   ),
                 ),
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               TextButton(
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
                   );
                 },
-                child: Text('Sudah punya akun? Login disini',
+                child: const Text('Sudah punya akun? Login disini',
                     style: TextStyle(color: Colors.black)),
               ),
             ],

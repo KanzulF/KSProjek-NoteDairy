@@ -4,17 +4,19 @@ import 'package:projek/screen/homepage.dart';
 import 'package:projek/widget/inputtext.dart';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF308E78),
+        backgroundColor: const Color(0xFF308E78),
         centerTitle: true,
         title: Text('Note Dairy Login'),
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(right: 64, left: 64),
+          padding: const EdgeInsets.only(right: 64, left: 64),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -23,8 +25,8 @@ class LoginPage extends StatelessWidget {
                   'assets/images/logo.png', // Ubah dengan path file gambar Anda
                 ),
               ),
-              SizedBox(height: 96.0),
-              Column(
+              const SizedBox(height: 96.0),
+              const Column(
                 children: [
                   InputText(
                     hint: 'Email',
@@ -37,32 +39,30 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 32.0),
-              Container(
+              const SizedBox(height: 32.0),
+              SizedBox(
                 width: 150.0, // Atur lebar sesuai kebutuhan
                 height: 40.0, // Atur tinggi sesuai kebutuhan
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
+                      MaterialPageRoute(builder: (context) => const HomePage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    primary:
-                        Color(0xFF308E78), // Atur warna latar belakang tombol
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           10.0), // Atur border radius tombol
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Login',
                     style: TextStyle(fontSize: 18),
                   ),
                 ),
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               TextButton(
                 onPressed: () {
                   Navigator.push(
@@ -70,7 +70,7 @@ class LoginPage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => SignupPage()),
                   );
                 },
-                child: Text('Belum punya akun? Daftar disini',
+                child: const Text('Belum punya akun? Daftar disini',
                     style: TextStyle(color: Colors.black)),
               ),
             ],

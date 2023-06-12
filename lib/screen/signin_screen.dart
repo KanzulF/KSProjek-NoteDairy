@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
         future: Firebase.initializeApp(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return SignInScreen();
+            return const SignInScreen();
           }
           return const Center(
             child: CircularProgressIndicator(),
@@ -65,13 +65,13 @@ class _SignInScreenState extends State<SignInScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF308E78),
+        backgroundColor: const Color(0xFF308E78),
         centerTitle: true,
-        title: Text('Note Dairy Login'),
+        title: const Text('Note Dairy Login'),
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(right: 64, left: 64),
+          padding: const EdgeInsets.only(right: 64, left: 64),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -107,7 +107,6 @@ class _SignInScreenState extends State<SignInScreen> {
                         email: _emailController.text,
                         password: _passwordController.text,
                         context: context);
-                    print(user);
                     if (user != null) {
                       Navigator.of(context).pushReplacement(
                           MaterialPageRoute(builder: (context) => HomePage()));
@@ -132,7 +131,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SignupPage()),
+                    MaterialPageRoute(builder: (context) => const SignupPage()),
                   );
                 },
                 child: const Text('Belum punya akun? Daftar disini',

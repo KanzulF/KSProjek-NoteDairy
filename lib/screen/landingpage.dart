@@ -54,13 +54,13 @@ class _LandingPageState extends State<LandingPage> {
             children: [
               Tombol(
                 judul: 'Sign Up',
-                color: Color(0xFF308E78),
+                color: const Color(0xFF308E78),
                 nextpage: SignupPage(),
               ),
               const SizedBox(width: 16.0),
-              Tombol(
+              const Tombol(
                 judul: 'Login',
-                color: const Color(0xFFB1ABAB),
+                color: Color(0xFFB1ABAB),
                 nextpage: SignInScreen(),
               ),
             ],

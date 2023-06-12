@@ -1,11 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:projek/models/note.dart';
-import 'package:projek/screen/signuppage.dart';
 import 'package:projek/widget/inputtext.dart';
-import 'package:projek/models/note.dart';
+
+import 'package:projek/encrypt/encryption.dart';
 
 class AddNotePage extends StatefulWidget {
+  const AddNotePage({super.key});
+
   @override
   _AddNotePageState createState() => _AddNotePageState();
 }
@@ -13,6 +15,11 @@ class AddNotePage extends StatefulWidget {
 class _AddNotePageState extends State<AddNotePage> {
   final controllerTitle = TextEditingController();
   final controllerIsi = TextEditingController();
+
+  String handleSubmit(String input) {
+    String manipulatedInput = EncryptionDescryption.encryptAES(input);
+    return manipulatedInput;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +33,14 @@ class _AddNotePageState extends State<AddNotePage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF308E78),
+        backgroundColor: const Color(0xFF308E78),
         automaticallyImplyLeading: true,
         centerTitle: true,
-        title: Text('Add Note'),
+        title: const Text('Add Note'),
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(right: 64, left: 64, top: 50),
+          padding: const EdgeInsets.only(right: 64, left: 64, top: 50),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -60,8 +67,9 @@ class _AddNotePageState extends State<AddNotePage> {
                 height: 40.0, // Atur tinggi sesuai kebutuhan
                 child: ElevatedButton(
                   onPressed: () async {
-                    final note = Note(
-                        title: controllerTitle.text, isi: controllerIsi.text);
+                    String isiEncrypted = handleSubmit(controllerIsi.text);
+                    final note =
+                        Note(title: controllerTitle.text, isi: isiEncrypted);
                     createNote(note);
                     Navigator.pop(context);
                   },

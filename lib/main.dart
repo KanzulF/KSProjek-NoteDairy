@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Note Dairy',
       theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xFF9CD7CC),
+        scaffoldBackgroundColor: const Color(0xFF9CD7CC),
       ),
-      home: LandingPage(),
+      home: const LandingPage(),
     );
   }
 }
