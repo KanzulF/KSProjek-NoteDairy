@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:projek/screen/loginpage.dart';
 
 class Tombol extends StatelessWidget {
   final String judul;
   final Color color;
-  final MaterialPageRoute nextpage;
+  final Widget nextpage;
 
   const Tombol(
       {super.key,
@@ -17,7 +18,7 @@ class Tombol extends StatelessWidget {
       onPressed: () {
         Navigator.push(
           context,
-          nextpage,
+          MaterialPageRoute(builder: (context) => nextpage),
         );
       },
       style: ElevatedButton.styleFrom(

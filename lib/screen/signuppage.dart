@@ -25,11 +25,20 @@ class SignupPage extends StatelessWidget {
               const SizedBox(height: 96.0),
               const Column(
                 children: [
-                  InputText(hint: 'Email'),
+                  InputText(
+                    hint: 'Email',
+                    obscure: false,
+                  ),
                   SizedBox(height: 16.0),
-                  InputText(hint: "Password"),
+                  InputText(
+                    hint: "Password",
+                    obscure: true,
+                  ),
                   SizedBox(height: 16.0),
-                  InputText(hint: "Confirmation Password")
+                  InputText(
+                    hint: "Confirmation Password",
+                    obscure: true,
+                  )
                 ],
               ),
               const SizedBox(height: 32.0),

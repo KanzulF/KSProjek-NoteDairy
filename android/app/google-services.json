@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "511546053210",
+    "firebase_url": "https://notedairy-4b51c-default-rtdb.firebaseio.com",
+    "project_id": "notedairy-4b51c",
+    "storage_bucket": "notedairy-4b51c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511546053210:android:3b37de44a2676d4543be63",
+        "android_client_info": {
+          "package_name": "com.example.projek"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "511546053210-gd6buj96d0jtejti8iki317ij7m8kskp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDchTnKn_sxudNzxjRCQ2cZL2J9MJPB8gU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "511546053210-gd6buj96d0jtejti8iki317ij7m8kskp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

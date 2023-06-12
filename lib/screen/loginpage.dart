@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projek/screen/signuppage.dart';
+import 'package:projek/screen/homepage.dart';
 import 'package:projek/widget/inputtext.dart';
 
 class LoginPage extends StatelessWidget {
@@ -25,9 +26,15 @@ class LoginPage extends StatelessWidget {
               SizedBox(height: 96.0),
               Column(
                 children: [
-                  InputText(hint: 'Email'),
+                  InputText(
+                    hint: 'Email',
+                    obscure: false,
+                  ),
                   SizedBox(height: 16.0),
-                  InputText(hint: "Password"),
+                  InputText(
+                    hint: "Password",
+                    obscure: true,
+                  ),
                 ],
               ),
               SizedBox(height: 32.0),
@@ -36,7 +43,10 @@ class LoginPage extends StatelessWidget {
                 height: 40.0, // Atur tinggi sesuai kebutuhan
                 child: ElevatedButton(
                   onPressed: () {
-                    // Logika untuk tombol login
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     primary:
